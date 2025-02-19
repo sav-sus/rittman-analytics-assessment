@@ -1,23 +1,28 @@
-# rittman-analytics-assessment
-Technical Assessment based on the GitHub Repo
+# Rittman Analytics Assessment
 
+A technical assessment using **dbt** to model **Stack Overflow data** from **Google BigQuery**, identifying **trending topics**, **unanswered questions**, and **engagement trends**.
 
-This project uses dbt to model Stack Overflow data from Google BigQuery, identifying trending topics based on questions, views, votes, and comments. The data is structured using a star schema, with raw_trending_topics as the fact table, enriched with tags, engagement metrics, and answer status.
+## Project Overview
 
-Key Features
-	•	Trending Topics: Identifies high-engagement tags.
-	•	Unanswered Questions: Highlights knowledge gaps in popular discussions.
-	•	Dimensional Modeling: Uses surrogate keys, fact tables, and conformed dimensions for scalable analysis.
+This project processes **Stack Overflow discussions** using a **star schema** data model.  
+The **`raw_trending_topics`** table serves as the **fact table**, enriched with **tags, engagement metrics, and answer status** to uncover key insights.
 
-Data Sources
-	•	Stack Overflow Posts, Comments, Votes, Tags, and Answers
-	•	Processed with dbt for structured analytics
+### Key Features
+- **Trending Topics** – Identifies high-engagement tags.
+- **Unanswered Questions** – Highlights knowledge gaps in popular discussions.
+- **Dimensional Modeling** – Uses **surrogate keys, fact tables, and conformed dimensions** for scalable analytics.
 
-Deliverables
-	•	dbt Models: Cleaned and aggregated datasets inside the model
-	•	Google Looker Studio Dashboard: Insights on engagement trends and unanswered topics
-     - https://lookerstudio.google.com/reporting/f841b356-553a-4b48-b1cc-66b9a5ffd567
-  • Google Docs: Data Modelling notes, lineage and comments
-    - https://docs.google.com/document/d/1Sq3Sea9C6uxAapKrbQXwnp50U-_iUMEFwZxm_DjHaho/edit?usp=sharing
+## Data Sources
+- **Stack Overflow**: Posts, Comments, Votes, Tags, and Answers
+- **dbt**: Cleans and models data for structured analysis.
 
-This project provides a foundation for deeper analysis of Stack Overflow discussions, helping identify areas where expert contributions are needed.
+## Deliverables
+- **dbt Models**: Structured datasets for analytics.
+- **Google Looker Studio Dashboard**: Insights on engagement & unanswered questions.  
+  [View Dashboard](https://lookerstudio.google.com/reporting/f841b356-553a-4b48-b1cc-66b9a5ffd567)
+- **Google Docs**: Data Modeling notes, lineage, and documentation.  
+  [View Documentation](https://docs.google.com/document/d/1Sq3Sea9C6uxAapKrbQXwnp50U-_iUMEFwZxm_DjHaho/edit?usp=sharing)
+
+---
+
+This project lays the foundation for **deeper analysis of Stack Overflow discussions**, helping identify areas where **expert contributions** are needed.
