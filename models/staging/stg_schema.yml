@@ -1,0 +1,74 @@
+version: 2
+
+sources:
+  - name: stack_overflow
+    description: "Stack Overflow dataset in BigQuery"
+    database: sav-rittman-analytics  # Your GBQ project
+    schema: stack_overflow  # Your dataset
+
+    tables:
+      - name: posts_questions
+        description: "Table containing Stack Overflow questions"
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: title
+          - name: body
+          - name: tags
+          - name: owner_user_id
+          - name: view_count
+          - name: score
+          - name: answer_count
+          - name: creation_date
+
+      - name: posts_answers
+        description: "Table containing Stack Overflow answers"
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: parent_id
+          - name: owner_user_id
+          - name: score
+          - name: creation_date
+
+      - name: users
+        description: "Table containing user data"
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: display_name
+          - name: reputation
+          - name: creation_date
+          - name: last_access_date
+
+      - name: comments
+        description: "Table containing Stack Overflow comments"
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: post_id
+          - name: user_id
+          - name: text
+          - name: score
+          - name: creation_date
+
+      - name: tags
+        description: "Table containing Stack Overflow post tags"
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: tag_name
+          - name: count
+          - name: excerpt_post_id
+          - name: wiki_post_id
+
+      - name: votes
+        description: "Table containing votes data"
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: creation_date
+          - name: post_id
+          - name: vote_type_id
+
+
