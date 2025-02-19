@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: raw_trending_topics
+    description: "Extracts question-level trending topics by splitting tags and adding engagement metrics (votes, comments, views). Used as the base model."
+    columns:
+      - name: question_id
+        description: "Unique identifier for the Stack Overflow question."
+        tests:
+          - not_null
+          - unique
+      - name: question_tags
+        description: "Tag assigned to the question, extracted via UNNEST."
+      - name: question_views
+        description: "Total number of views for the question."
+      - name: question_total_votes
+        description: "Total number of votes (upvotes/downvotes) on the question."
+      - name: question_total_comments
+        description: "Total number of comments on the question."
+
+  - name: trending_tags
+    description: "Aggregated trending tags showing engagement metrics (total views, votes, comments) at the tag level."
+    columns:
+      - name: tag
+        description: "The topic (tag) associated with Stack Overflow questions."
+      - name: total_questions
+        description: "Number of questions that have this tag."
+      - name: total_views
+        description: "Total number of views across all questions for this tag."
+      - name: total_votes
+        description: "Total votes across all questions for this tag."
+      - name: total_comments
+        description: "Total number of comments across all questions for this tag."
+      - name: avg_tag_usage
+        description: "The average frequency of this tag appearing across all Stack Overflow questions."
+
+  - name: unanswered_trending
+    description: "Identifies trending topics where questions remain unanswered. Used for content gap analysis."
+    columns:
+      - name: tag
+        description: "The topic (tag) associated with unanswered questions."
+      - name: total_unanswered_questions
+        description: "Total number of unanswered questions per tag."
+      - name: total_unanswered_views
+        description: "Total number of views across unanswered questions for this tag."
+      - name: avg_question_score
+        description: "Average score of unanswered questions for this tag."

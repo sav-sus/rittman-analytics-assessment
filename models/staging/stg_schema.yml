@@ -3,8 +3,8 @@ version: 2
 sources:
   - name: stack_overflow
     description: "Stack Overflow dataset in BigQuery"
-    database: sav-rittman-analytics  # Your GBQ project
-    schema: stack_overflow  # Your dataset
+    database: sav-rittman-analytics 
+    schema: stack_overflow
 
     tables:
       - name: posts_questions
