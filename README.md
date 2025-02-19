@@ -23,6 +23,13 @@ The **`raw_trending_topics`** table serves as the **fact table**, enriched with 
 - **Google Docs**: Data Modeling notes, lineage, and documentation.  
   [View Documentation](https://docs.google.com/document/d/1Sq3Sea9C6uxAapKrbQXwnp50U-_iUMEFwZxm_DjHaho/edit?usp=sharing)
 
+## BigQuery Table Links
+You can access the processed datasets in Google BigQuery using the links below:
+
+- **Marts (Final Processed Data):**  
+  [Stack Overflow Analytics Dataset](https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1ssav-rittman-analytics!2sstack_overflow_analytics)
+- **Staging (Raw Data):**  
+  [Stack Overflow Staging Dataset](https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1ssav-rittman-analytics!2sstack_overflow_staging)
 ---
 
-This project lays the foundation for **deeper analysis of Stack Overflow discussions**, helping identify areas where **expert contributions** are needed.
+This project lays the foundation for deeper analysis of Stack Overflow discussions, helping identify areas where expert contributions are needed.
