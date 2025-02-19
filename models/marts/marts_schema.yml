@@ -8,14 +8,30 @@ models:
         description: "Unique identifier for the Stack Overflow question."
         tests:
           - not_null
-      - name: question_tags
-        description: "Tag assigned to the question, extracted via UNNEST."
+      - name: question_title
+        description: "Title of the question."
+      - name: question_body
+        description: "Body text of the question."
+      - name: question_author_id
+        description: "User ID of the question's author."
       - name: question_views
-        description: "Total number of views for the question."
+        description: "Total number of views for this question."
+      - name: question_score
+        description: "The Stack Overflow score of the question (upvotes minus downvotes)."
+      - name: question_answer_count
+        description: "How many answers this question currently has."
+      - name: question_created_at
+        description: "Timestamp when the question was created."
+      - name: question_tags
+        description: "Tag assigned to the question, extracted via UNNEST (may appear multiple times if multiple tags)."
       - name: question_total_votes
-        description: "Total number of votes (upvotes/downvotes) on the question."
+        description: "Total number of votes (upvotes/downvotes) on this question."
       - name: question_total_comments
-        description: "Total number of comments on the question."
+        description: "Total number of comments on this question."
+      - name: tag_usage_count
+        description: "How many times this tag is used across all questions in the dataset."
+      - name: wiki_post_id
+        description: "Wiki post ID for the tag in Stack Overflow."
 
   - name: trending_tags
     description: "Aggregated trending tags showing engagement metrics (total views, votes, comments) at the tag level."
