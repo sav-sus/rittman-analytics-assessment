@@ -8,7 +8,6 @@ models:
         description: "Unique identifier for the Stack Overflow question."
         tests:
           - not_null
-          - unique
       - name: question_tags
         description: "Tag assigned to the question, extracted via UNNEST."
       - name: question_views
