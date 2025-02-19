@@ -64,11 +64,11 @@ clean-targets:
 models:
   rittman_analytics_assessment:
     marts:
-      +database: sav_stack_overflow  
+      +database: sav-rittman-analytics  
       +schema: analytics
       +materialized: table
 
     staging:
-      +database: sav_stack_overflow
+      +database: sav-rittman-analytics
       +schema: staging
       +materialized: view 
